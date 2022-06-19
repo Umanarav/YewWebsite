@@ -1,0 +1,618 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*MY CODE*/
+
+* {
+  text-decoration: none;
+}
+
+main {
+  padding-top: 100px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  background-color: #fff;
+  width: 100%;
+  height: 100px;
+}
+
+header .header-brand{
+    font-family: 'Cinzel', serif;
+    font-size: 21px;
+    font-weight: 900;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 21px 0;
+  }
+
+  header nav ul {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  header nav ul li {
+    display: inline-block;
+    float:left;
+    list-style: none;
+    padding: 0 8px;
+  }
+
+  header nav ul li a{
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  header .header-Albums {
+    display: none;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    header .header-brand{
+        margin: 31px 0;
+        text-align: left;
+        line-height: 38px;
+        padding: 0px 20px 0px 55px;
+        border-right: 3px solid #111;
+        float: left;
+      }
+
+      header nav ul {
+        display: block;
+        margin: 20px 0px 0px 20px;
+        float: left;
+      }
+
+      header nav ul li {
+        padding: 0 21px;
+      }
+
+      header nav ul li a{
+        line-height: 60px;
+      }
+
+      header .header-Albums {
+        display: block;
+        font-family: 'Cinzel', serif;
+        font-size: 19px;
+        color: #111;
+        text-transform: uppercase;
+        line-height: 38px;
+        border: 1px solid #111;
+        float:right;
+        margin-right: 40px;
+        margin-top: 30px;
+        padding: 0 20px;
+      }
+  }
+
+/*INDEX*/
+
+.index-banner {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-image: url('image/yew.jpg');
+  background-repeat: no-repeat;
+  background-position: 67%;
+  background-size: cover;
+  display:table;
+}
+
+.vertical-center {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.index-banner h2 {
+  padding-top: 28px;
+  font-family: 'Cinzel', serif;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 70px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px #111;
+}
+
+.index-banner h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 29px;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px #111;
+}
+
+.index-links div {
+  margin: 16px 16px 0;
+  width: calc(100% - 32px);
+  height: 100px;
+  background-color: #f2f2f2;
+}
+
+.index-links div h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 100px;
+  color: #111;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1000px) {
+  .wrapper{
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .index-banner {
+    height: 450px;
+  }
+
+  .index-links{
+    padding-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .index-banner h1 {
+    display:block;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .index-links div {
+    margin: 20px 10px 0;
+    height: 230px;
+    background-color: #f2f2f2;
+    float: left;
+  }
+
+  .index-boxlink-square{
+    width: calc(25% - 20px) !important;
+  }
+
+  .index-boxlink-rectangle{
+    width: calc(50% - 20px) !important;
+  }
+
+  .index-links div h3 {
+    line-height: 230px;
+  }
+}
+
+/*Albums*/
+
+.Albums-links {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.Albums-links h2 {
+  text-align:center;
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.Albums-links .Albums-link-1 {
+  display: block;
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #e3e3e3;
+}
+
+/*this is for the album text*/
+.Albums-links .Albums-link-1 p {
+  padding-top: 45%;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f2f2f2;
+  text-align:center;
+  text-transform: uppercase;
+}
+
+/*contact me*/
+.Albums-links .Albums-contact  {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 150px;
+  background-color: #e3e3e3;
+}
+
+.Albums-links .Albums-contact p {
+  line-height: 60px;
+  letter-spacing: 3px;
+  font-family: 'Cinzel', serif;
+  font-size:24px;
+  font-weight: 600;
+  color:#111;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Albums-links .Albums-contact h3 {
+  line-height: 40px;
+  letter-spacing: 1px;
+  font-family: 'Cinzel', serif;
+  font-size:24px;
+  font-weight: 400;
+  color:#111;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Albums-links .Albums-link-1 {
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin: 20px 10px 0px;
+    background-color: #e3e3e3;
+  }
+  .Albums-links .Albums-contact  {
+    width:980px;
+    height: 150px;
+    margin: 20px 10px 0px;
+    background-color: #e3e3e3;
+    float:left;
+  }
+
+  .Albums-links .Albums-contact p {
+    line-height: 100px;
+  }
+  .Albums-links .Albums-contact h3 {
+    line-height: 15px;
+  }
+}
+
+/*pictures*/
+.div-picture-1 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/voider.jpg');
+  background-size: 100%;
+}
+.div-picture-2 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/24.jpg');
+  background-size: 100%;
+}
+.div-picture-3 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/no_expectations.jpg');
+  background-size: 100%;
+}
+.div-picture-4 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/ah&ahs.jpg');
+  background-size: 100%;
+}
+.div-picture-5 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/open.jpg');
+  background-size: 100%;
+}
+.div-picture-6 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/The_big_jamboree.jpg');
+  background-size: 100%;
+}
+.div-picture-7 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/2003_PC.jpg');
+  background-size: 100%;
+}
+.div-picture-8 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/man_in_the_crowd.jpg');
+  background-size: 100%;
+}
+.div-picture-9 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/the_island.jpg');
+  background-size: 100%;
+}
+.div-picture-10 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/NGUY.jpg');
+  background-size: 100%;
+}
+.div-picture-11 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/Cman1.jpg');
+  background-size: 100%;
+}
+.div-picture-12 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/Into_a_Dream.jpg');
+  background-size: 100%;
+}
+.div-picture-13 {
+  width: 230px;
+  height: 230px;
+  background-image: url('image/Arborglyph.jpg');
+  background-size: 100%;
+}
+
+.DWELL{
+  width: 230px;
+  height: 230px;
+  background-image: url('image/DWELL/1.jpg');
+  background-size: 100%;
+}
+
+
+/*portfolio*/
+
+.portfolio-links {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.portfolio-links h2 {
+  text-align:center;
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.portfolio-links .portfolio-link-1 {
+  display: block;
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #e3e3e3;
+}
+
+.portfolio-links .portfolio-link-1 p {
+  padding-top: 45%;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f2f2f2;
+  text-align:center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1000px) {
+  .portfolio-links .portfolio-link-1 {
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin: 20px 10px 0px;
+    background-color: #e3e3e3;
+  }
+}
+
+/*DWELL*/
+
+.book-one-links p {
+  text-align:left;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 344;
+  color: #111;
+  margin-top: 30px;
+}
+
+.book-one-links h1 {
+  text-align:center;
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+  text-transform: uppercase;
+  border-bottom: 5px solid black;
+  margin-top: 30px;
+}
+
+.book-one-links .center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 21px;
+  width: 69%;
+}
+
+/*footer*/
+
+footer {
+  width: calc(100% - 80px);
+  padding: 40px 40px;
+  margin-top: 20px;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+footer ul {
+  width: fit-content;
+  float: left;
+  padding-left: 20px;
+}
+
+footer ul li{
+  display: block;
+  list-style: none;
+}
+
+footer ul li a{
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  color: #fff;
+  line-height: 30px;
+}
+
+.footer-links-portfolio {
+  display: none;
+}
+
+.footer-links-Albums {
+  display: none;
+}
+
+.footer-links-art {
+  display:none;
+}
+
+.footer-sm {
+  width: 40px;
+  float: right;
+}
+
+.footer-sm img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .footer-links-Albums {
+    display: block;
+  }
+
+  .footer-links-art {
+    display:block;
+  }
+
+  footer ul {
+    padding-right: 30px;
+  }
+
+  footer ul li p{
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    color: #fff;
+    line-height: 30px;
+  }
+}
