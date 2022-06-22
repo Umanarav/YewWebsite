@@ -405,7 +405,7 @@ header .header-brand{
 .div-picture-4 {
   width: 230px;
   height: 230px;
-  background-image: url('image/ah&ahs.jpg');
+  background-image: url('image/ah_ahs.jpg');
   background-size: 100%;
 }
 .div-picture-5 {
@@ -466,7 +466,14 @@ header .header-brand{
 .DWELL{
   width: 230px;
   height: 230px;
-  background-image: url('image/DWELL/1.jpg');
+  background-image: url('image/DWELL/DWELL_thumbnail.jpg');
+  background-size: 100%;
+}
+.FractalGenerator{
+  font-size: 15px;
+  width: 230px;
+  height: 230px;
+  background-image: url('image/Fractal/FractalGeneratorExample.png');
   background-size: 100%;
 }
 
@@ -497,14 +504,16 @@ header .header-brand{
 }
 
 .portfolio-links .portfolio-link-1 p {
-  padding-top: 45%;
+  padding-top: 13%;
   font-family: 'Cinzel', serif;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 610;
   color: #f2f2f2;
   text-align:center;
   text-transform: uppercase;
+  text-shadow: 2px 2px #000000;
 }
+
 
 @media only screen and (min-width: 1000px) {
   .portfolio-links .portfolio-link-1 {
@@ -572,6 +581,13 @@ footer ul li a{
   font-size: 24px;
   color: #fff;
   line-height: 30px;
+}
+
+.albums_underline{
+  text-decoration: underline;
+}
+.portfolio_underline{
+  text-decoration: underline;
 }
 
 .footer-links-portfolio {
