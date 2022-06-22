@@ -157,6 +157,10 @@ header .header-brand{
     display: none;
   }
 
+  .fractalGeneratorResponsive{
+    display: none;
+  }
+
   @media only screen and (min-width: 1000px) {
     header .header-brand{
         margin: 31px 0;
@@ -179,6 +183,10 @@ header .header-brand{
 
       header nav ul li a{
         line-height: 60px;
+      }
+
+      .fractalGeneratorResponsive{
+        display: block;
       }
 
       header .header-Albums {
