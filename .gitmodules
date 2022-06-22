@@ -1,0 +1,3 @@
+[submodule "FractalRepository"]
+	path = FractalRepository
+	url = git@github.com:Umanarav/FractalRepository.git
