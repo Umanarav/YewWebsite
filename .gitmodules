@@ -2,3 +2,6 @@
 	path = FractalRepository
 	url = https://github.com/Umanarav/FractalRepository.git
 
+[submodule "Yew-s-RogueLike"]
+	path = Yew-s-RogueLike
+	url = https://github.com/Umanarav/Yew-s-RogueLike.git
