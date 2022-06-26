@@ -1,6 +1,4 @@
 [submodule "FractalRepository"]
 	path = FractalRepository
 	url = https://github.com/Umanarav/FractalRepository.git
-[submodule "Yew-Roguelike"]
-	path = Yew-Roguelike
-	url = https://github.com/Umanarav/Yew-Roguelike
+
