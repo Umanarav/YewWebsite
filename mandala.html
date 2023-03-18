@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turtle Mandala</title>
+    <style>
+        canvas {
+            width: 89vw;
+            height: 89vh;
+            display: block;
+            margin: auto;
+        }
+        h2 {
+            font-size: 13px;
+        }
+        body {
+            background-color:#0d0d0d; /* change to the desired shade of gray */
+        }
+        p {
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+
+        
+        function getRandomFibonacciNumber() {
+            // Initialize the first two Fibonacci numbers
+            var fibonacci_nums = [1, 1];
+
+            // Generate the remaining Fibonacci numbers up to 377
+            while (fibonacci_nums[fibonacci_nums.length - 1] < 377) {
+                var next_num = fibonacci_nums[fibonacci_nums.length - 1] + fibonacci_nums[fibonacci_nums.length - 2];
+                fibonacci_nums.push(next_num);
+            }
+
+            // Select a random Fibonacci number between 13 and 377
+            var random_fibonacci_num = fibonacci_nums[Math.floor(Math.random() * (fibonacci_nums.length - 3)) + 3];
+
+            return random_fibonacci_num;
+        }
+
+        function refreshMandala() {
+            // Get four random Fibonacci numbers
+            var lAmount = getRandomFibonacciNumber();
+            var sAmount = getRandomFibonacciNumber();
+            var mAmount = getRandomFibonacciNumber();
+            var sDegree = getRandomFibonacciNumber();
+
+            //create id string
+            var mandalaID = "M-" + lAmount + "-" + sAmount + "-" + mAmount + "-" + sDegree;
+
+            //update the display text
+            document.getElementById("lAmount").innerHTML = lAmount;
+            document.getElementById("sAmount").innerHTML = sAmount;
+            document.getElementById("mAmount").innerHTML = mAmount;
+            document.getElementById("sDegree").innerHTML = sDegree;
+            document.getElementById("mandalaID").innerHTML = mandalaID;
+
+            // Draw the mandala
+            var mycanvas = document.getElementById("mycanvas");
+            mycanvas.width = window.innerWidth * 0.89;
+            mycanvas.height = window.innerHeight * 0.89;
+            var ctx = mycanvas.getContext("2d");
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, mycanvas.width, mycanvas.height);
+            ctx.strokeStyle = "white";
+            var xPos = mycanvas.width/2;
+            var yPos = mycanvas.height/2;
+            var angle = 0;
+            for (var i = 0; i < lAmount; i++) {
+                for (var j = 0; j < sAmount; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(xPos, yPos);
+                    xPos += Math.cos(angle) * mAmount;
+                    yPos += Math.sin(angle) * mAmount;
+                    ctx.lineTo(xPos, yPos);
+                    angle += sDegree * Math.PI / 180;
+                    ctx.stroke();
+                }
+                angle += 137.5 * Math.PI / 180;
+            }
+        }
+
+        function exportCanvas() {
+            var canvas = document.getElementById("mycanvas");
+            var image = canvas.toDataURL("image/png");
+            var link = document.createElement('a');
+            link.download = "mandala.png";
+            link.href = image;
+            link.click();
+        }
+
+        function toggleNumbers() {
+            var numbers = document.getElementById("numbers");
+
+            if (numbers.style.display === "none") {
+                numbers.style.display = "block";
+            } else {
+                numbers.style.display = "none";
+            }
+        }
+
+        var fibonacci_nums = [1, 1];
+        while (fibonacci_nums[fibonacci_nums.length - 1] < 377) {
+            var next_num = fibonacci_nums[fibonacci_nums.length - 1] + fibonacci_nums[fibonacci_nums.length - 2];
+            fibonacci_nums.push(next_num);
+        }
+
+        var combinations = [];
+        var index = 0;
+        for (var i = 0; i < fibonacci_nums.length; i++) {
+            for (var j = 0; j < fibonacci_nums.length; j++) {
+                for (var k = 0; k < fibonacci_nums.length; k++) {
+                    for (var l = 0; l < fibonacci_nums.length; l++) {
+                        var combination = {
+                            lAmount: fibonacci_nums[i],
+                            sAmount: fibonacci_nums[j],
+                            mAmount: fibonacci_nums[k],
+                            sDegree: fibonacci_nums[l]
+                        };
+                        combinations.push(combination);
+                        index++;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body onload="refreshMandala()">
+    <p>Mandala ID: <span id="mandalaID"></span></p>
+    <canvas id="mycanvas" width=mycanvas.width height=mycanvas.height></canvas>
+    <button onclick="refreshMandala()">Refresh Mandala</button>
+    <button onclick="exportCanvas()">Export as Image</button>
+    <button onclick="toggleNumbers()">Toggle Info</button>
+    <div id="numbers">
+        <p>Amount of times the loop will be preformed: <span id="lAmount"></span></p>
+        <p>Sides to the base shape being drawn: <span id="sAmount"></span></p>
+        <p>Distance in pixels the pen goes before turning to draw another side: <span id="mAmount"></span></p>
+        <p>Degree that the pen will turn before drawing another side: <span id="sDegree"></span>&deg</p>
+        <p>This only goes between 13-377 right now. 
+            It can randomly pick any of the 21 fibonnaci numbers in the sequence. 
+            We have 4 variables so 21^4 = 19,683 unique mandalas.
+        </p>
+
+    </div>
+</body>
+</html>

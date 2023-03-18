@@ -490,11 +490,9 @@ header .header-brand{
   background-image: url('image/roguelikethumbnail.png');
   background-size: 100%;
 }
-.CurseForge{
-  width: 230px;
-  height: 230px;
-  background-image: url('image/curseforgelogo.png');
-  background-size: 100%;
+.Mandala{
+  background-image: url('image/mandala.png');
+  scale: 50%;
 }
 
 /*portfolio*/
