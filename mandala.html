@@ -48,7 +48,21 @@
             border-color: #f8f8f8;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
             cursor: pointer;
+            animation: sparkle 2.33s linear infinite;
         }
+
+        @keyframes sparkle {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0px 0px 1px rgba(255, 0, 0, 1), 0px 0px 2px rgba(255, 255, 0, 1), 0px 0px 3px rgba(0, 255, 0, 1), 0px 0px 5px rgba(0, 255, 255, 1), 0px 0px 8px rgba(0, 0, 255, 1), 0px 0px 13px rgba(255, 0, 255, 1), 0px 0px 21px rgba(255, 0, 0, 1), 0px 0px 34px #f8f8f8;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
         
     </style>
     <script type="text/javascript">
@@ -170,7 +184,7 @@
     <button onclick="refreshMandala()">Refresh Mandala</button>
     <button onclick="exportCanvas()">Export as Image</button>
     <button onclick="toggleNumbers()">Toggle Info</button>
-    <button onclick="location.href='https://iamyew.gay/portfolio.html'">Portfolio</button>
+    <button onclick="location.href='portfolio.html'">Portfolio</button>
     <div id="numbers">
         <p>Amount of times the loop will be preformed: <span id="lAmount"></span></p>
         <p>Sides to the base shape being drawn: <span id="sAmount"></span></p>
