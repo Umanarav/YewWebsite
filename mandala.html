@@ -14,16 +14,23 @@
         h2 {
             font-size: 13px;
         }
+        h3 {
+            font-size: 13px;
+            padding: 1px;
+            color: white;
+        }
         body {
             background-color:#0d0d0d; /* change to the desired shade of gray */
         }
         p {
             color: white;
+            font-size: 21px;
+            padding: 1px;
         }
         button {
             margin-top: 21px;
             margin-left: 11vw;
-            font-size: 1.2em;
+            font-size: 34px;
             padding: 10px 20px;
             border-radius: 10px;
         }
@@ -144,6 +151,7 @@
 <body onload="refreshMandala()">
     <p>Mandala ID: <span id="mandalaID"></span></p>
     <canvas id="mycanvas" width=mycanvas.width height=mycanvas.height></canvas>
+    <h3>Refresh to generate new mandala</h3>
     <button onclick="refreshMandala()">Refresh Mandala</button>
     <button onclick="exportCanvas()">Export as Image</button>
     <button onclick="toggleNumbers()">Toggle Info</button>
