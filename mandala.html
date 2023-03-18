@@ -8,6 +8,8 @@
             height: 89vh;
             display: block;
             margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
         }
         h2 {
             font-size: 13px;
@@ -17,6 +19,13 @@
         }
         p {
             color: white;
+        }
+        button {
+            margin-top: 21px;
+            margin-left: 11vw;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         
     </style>
@@ -142,9 +151,9 @@
         <p>Sides to the base shape being drawn: <span id="sAmount"></span></p>
         <p>Distance in pixels the pen goes before turning to draw another side: <span id="mAmount"></span></p>
         <p>Degree that the pen will turn before drawing another side: <span id="sDegree"></span>&deg</p>
-        <p>This only goes between 13-377 right now. 
+        <p>*This only goes between 13-377 right now. 
             It can randomly pick any of the 21 fibonnaci numbers in the sequence. 
-            We have 4 variables so 21^4 = 19,683 unique mandalas.
+            We have 4 variables so 21^4 = 19,683 unique mandalas.*
         </p>
 
     </div>
