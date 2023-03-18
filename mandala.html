@@ -30,7 +30,7 @@
 
         button {
             margin-top: 21px;
-            margin-left: 11vw;
+            margin-left: 8vw;
             font-size: 34px;
             border-radius: 10px;
             color: white;
@@ -38,7 +38,7 @@
             border: 2px solid white;
             
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
+            padding: 8px 8px;
             transition: all 0.2s ease-in-out;
             }
 
@@ -47,6 +47,7 @@
             color: #3b3b3b;
             border-color: #f8f8f8;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
         }
         
     </style>
@@ -169,6 +170,7 @@
     <button onclick="refreshMandala()">Refresh Mandala</button>
     <button onclick="exportCanvas()">Export as Image</button>
     <button onclick="toggleNumbers()">Toggle Info</button>
+    <button onclick="location.href='https://iamyew.gay/portfolio.html'">Portfolio</button>
     <div id="numbers">
         <p>Amount of times the loop will be preformed: <span id="lAmount"></span></p>
         <p>Sides to the base shape being drawn: <span id="sAmount"></span></p>
@@ -179,5 +181,6 @@
             We have 4 variables so 21^4 = 19,683 unique mandalas.*
         </p>
     </div>
+
 </body>
 </html>
