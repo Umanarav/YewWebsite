@@ -491,8 +491,10 @@ header .header-brand{
   background-size: 100%;
 }
 .Mandala{
+  width: 230px;
+  height: 230px;
   background-image: url('image/mandala.png');
-  scale: 50%;
+  background-size: 100%;
 }
 
 /*portfolio*/
