@@ -21,7 +21,8 @@
     </style>
     <script type="text/javascript">
 
-        
+        let exportCount = localStorage.getItem('exportCount') || 0;
+ 
         function getRandomFibonacciNumber() {
             // Initialize the first two Fibonacci numbers
             var fibonacci_nums = [1, 1];
@@ -81,12 +82,15 @@
         }
 
         function exportCanvas() {
+            exportCount++;
+            localStorage.setItem('exportCount', exportCount);
             var canvas = document.getElementById("mycanvas");
             var image = canvas.toDataURL("image/png");
             var link = document.createElement('a');
-            link.download = "mandala.png";
+            link.download = "mandala_" + exportCount + ".png";
             link.href = image;
             link.click();
+            console.log("Exported image as " + link.download);
         }
 
         function toggleNumbers() {
