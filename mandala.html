@@ -97,7 +97,8 @@
             var canvas = document.getElementById("mycanvas");
             var image = canvas.toDataURL("image/png");
             var link = document.createElement('a');
-            link.download = "mandala_" + exportCount + ".png";
+            var mandalaID = document.getElementById("mandalaID").innerHTML;
+            link.download = mandalaID + ".png";
             link.href = image;
             link.click();
             console.log("Exported image as " + link.download);
@@ -155,7 +156,6 @@
             It can randomly pick any of the 21 fibonnaci numbers in the sequence. 
             We have 4 variables so 21^4 = 19,683 unique mandalas.*
         </p>
-
     </div>
 </body>
 </html>
