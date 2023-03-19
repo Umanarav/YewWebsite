@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        canvas {
+            width: 89vw;
+            height: 89vh;
+            display: block;
+            margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 13px;
+        }
+        h3 {
+            font-size: 21px;
+            padding: 1px;
+            color: white;
+        }
+        body {
+            background-color:#0d0d0d; /* change to the desired shade of gray */
+        }
+        p {
+            color: white;
+            font-size: 21px;
+            padding: 1px;
+        }
+
+        button {
+            margin-top: 5px;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            font-size: 34px;
+            border-radius: 10px;
+            color: white;
+            background-color: #3b3b3b;
+            border: 2px solid white;
+            
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 8px 8px;
+            transition: all 0.2s ease-in-out;
+            }
+
+            button:hover, button:active {
+            background-color: #f8f8f8;
+            color: #3b3b3b;
+            border-color: #f8f8f8;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            animation: sparkle 2.33s linear infinite;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        label, input {
+            margin: 10px;
+        }
+
+        @keyframes sparkle {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0px 0px 1px rgba(255, 0, 0, 1), 0px 0px 2px rgba(255, 255, 0, 1), 0px 0px 3px rgba(0, 255, 0, 1), 0px 0px 5px rgba(0, 255, 255, 1), 0px 0px 8px rgba(0, 0, 255, 1), 0px 0px 13px rgba(255, 0, 255, 1), 0px 0px 21px rgba(255, 0, 0, 1), 0px 0px 34px #f8f8f8;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
+        
+    </style>
+<head>
+    <title>Turtle Drawing</title>
+    <script type="text/javascript">
+        var lAmount;
+    var sAmount;
+    var mAmount;
+    var sDegree;
+
+        function drawMandala() {
+            if (lAmount < 0) {
+                lAmount = 0;
+                loopAmountInput.value = 0;
+            }
+            if (sAmount < 0) {
+                sAmount = 0;
+                shapeAmountInput.value = 0;
+            }
+
+            lAmount = parseInt(document.getElementById("loopAmount").value);
+            sAmount = parseInt(document.getElementById("shapeAmount").value);
+            mAmount = parseInt(document.getElementById("moveAmount").value);
+            sDegree = parseFloat(document.getElementById("shapeDegree").value);
+
+            var mandalaID = "M-" + lAmount + "-" + sAmount + "-" + mAmount + "-" + sDegree;
+
+            document.getElementById("mandalaID").innerHTML = mandalaID;
+
+            var canvas = document.getElementById("mycanvas");
+            mycanvas.width = window.innerWidth * 0.89;
+            mycanvas.height = window.innerHeight * 0.89;
+            var ctx = canvas.getContext("2d");
+
+            // reset the initial position and heading
+            var x = canvas.width / 2;
+            var y = canvas.height / 2;
+            var angle = 0;
+
+            // set background color to black
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // set pen color to white
+            ctx.strokeStyle = "white";
+
+            function drawShape(loopAmount, shapeAmount, moveAmount, shapeDegree) {
+                // draw multiple squares
+                for (var i = 0; i < loopAmount; i++) {
+                    for (var j = 0; j < shapeAmount; j++) {
+                        x += moveAmount * Math.cos(angle);
+                        y += moveAmount * Math.sin(angle);
+                        angle += shapeDegree * Math.PI / 180;
+                        ctx.lineTo(x, y);
+                    }
+                    angle += 137.5 * Math.PI / 180;
+                }
+            }
+
+            ctx.beginPath();
+            drawShape(lAmount, sAmount, mAmount, sDegree);
+            ctx.stroke()
+        }
+
+        document.addEventListener("keyup", function(event) {
+            if (event.target.tagName === "INPUT" && event.key !== "Tab") {
+                drawMandala();
+            }
+        });
+
+    document.addEventListener('wheel', function(event) {
+    // Check if the target element is a number input field
+    if (event.target.type === 'number') {
+
+        // Increment or decrement the value based on the direction of the scroll
+        if (event.deltaY < 0) {
+            event.target.stepUp();
+        } else {
+            event.target.stepDown();
+        }
+        // Trigger the drawMandala function
+        drawMandala();
+
+    }
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+    });
+
+        
+    </script>
+</head>
+<body onload="drawMandala()">
+    
+    <canvas id="mycanvas" width=mycanvas.width height=mycanvas.height></canvas>
+    <form>
+        <p>Mandala ID: <span id="mandalaID"></span> ||</p>
+        <label for="loopAmount">Loop Amount:</label>
+        <input type="number" id="loopAmount" value="55" step=".5" min="0"><br><br>
+
+        <label for="shapeAmount">Shape Amount:</label>
+        <input type="number" id="shapeAmount" value="34" step=".5" min="0"><br><br>
+
+        <label for="moveAmount">Move Amount:</label>
+        <input type="number" id="moveAmount" value="377" step=".5"><br><br>
+
+        <label for="shapeDegree">Shape Degree:</label>
+        <input type="number" id="shapeDegree" value="137.5" step=".5"><br><br>
+    </form>
+</body>
+</html>
