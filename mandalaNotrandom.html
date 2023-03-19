@@ -25,19 +25,15 @@
             font-size: 21px;
             padding: 1px;
         }
-
+        .button-container {
+            text-align: center;
+        }
         button {
-            margin-top: 5px;
-            margin-left: 1vw;
-            margin-right: 1vw;
-            font-size: 34px;
-            border-radius: 10px;
+            font-size: 13px;
+            margin-top: -20px;
             color: white;
             background-color: #3b3b3b;
-            border: 2px solid white;
-            
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-            padding: 8px 8px;
             transition: all 0.2s ease-in-out;
             }
 
@@ -55,12 +51,12 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: -5px;
             color: white;
         }
 
         label, input {
-            margin: 10px;
+            margin: 5px;
         }
 
         @keyframes sparkle {
@@ -173,16 +169,21 @@
     <form>
         <p>Mandala ID: <span id="mandalaID"></span> ||</p>
         <label for="loopAmount">Loop Amount:</label>
-        <input type="number" id="loopAmount" value="55" step=".5" min="0"><br><br>
+        <input type="number" id="loopAmount" value="55" step="1" min="0"><br><br>
 
         <label for="shapeAmount">Shape Amount:</label>
-        <input type="number" id="shapeAmount" value="34" step=".5" min="0"><br><br>
+        <input type="number" id="shapeAmount" value="34" step="1" min="0"><br><br>
 
         <label for="moveAmount">Move Amount:</label>
-        <input type="number" id="moveAmount" value="377" step=".5"><br><br>
+        <input type="number" id="moveAmount" value="377" step="1"><br><br>
 
         <label for="shapeDegree">Shape Degree:</label>
-        <input type="number" id="shapeDegree" value="137.5" step=".5"><br><br>
+        <input type="number" id="shapeDegree" value="137.5" step="1"><br><br>
     </form>
+    <div id=".button-container">
+        <button onclick="location.href='portfolio.html'">Portfolio</button>
+        <button onclick="location.href='mandala.html'">Random Mandala generator</button>
+    </div>
+
 </body>
 </html>
